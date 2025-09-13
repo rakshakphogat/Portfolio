@@ -1,0 +1,19 @@
+{
+  "name": "Rakshak Kumar - Full Stack Developer Portfolio",
+  "short_name": "Rakshak Portfolio",
+  "description": "Portfolio website of Rakshak Kumar, a passionate Full Stack Developer and Computer Science Engineering student",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#3b82f6",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "any",
+      "type": "image/x-icon"
+    }
+  ],
+  "categories": ["portfolio", "developer", "technology"],
+  "lang": "en-US"
+}
