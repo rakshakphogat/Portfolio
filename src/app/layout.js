@@ -8,11 +8,11 @@ const inter = Inter({
 });
 
 export const metadata = {
-  title: "Rakshak Kumar - Full Stack Developer | Portfolio",
-  description: "Rakshak Kumar is a passionate Computer Science Engineering student and Full Stack Developer specializing in MERN stack, Next.js, and modern web technologies. Explore my projects and skills.",
-  keywords: "Rakshak Kumar, Full Stack Developer, MERN Stack, Next.js, React, Node.js, Portfolio, Computer Science, Web Development",
-  authors: [{ name: "Rakshak Kumar" }],
-  creator: "Rakshak Kumar",
+  title: "Rakhshak Kumar - Full Stack Developer | Portfolio",
+  description: "Rakhshak Kumar is a passionate Computer Science Engineering student and Full Stack Developer specializing in MERN stack, Next.js, and modern web technologies. Explore my projects and skills.",
+  keywords: "Rakhshak Kumar, Full Stack Developer, MERN Stack, Next.js, React, Node.js, Portfolio, Computer Science, Web Development",
+  authors: [{ name: "Rakhshak Kumar" }],
+  creator: "Rakhshak Kumar",
   openGraph: {
     type: "website",
     locale: "en_US",

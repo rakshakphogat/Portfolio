@@ -4,7 +4,7 @@ export const portfolioData = {
         title: "Full Stack Developer",
         subtitle: "Computer Science Engineering Student",
         email: "rakshakphogat@gmail.com",
-        phone: "+91-8708728915",
+        phone: "+91-8708928915",
         linkedin: "https://www.linkedin.com/in/rakhshak-kumar-97901a331",
         github: "https://github.com/rakshakphogat",
         location: "Chandigarh, Punjab University"
@@ -53,7 +53,7 @@ export const portfolioData = {
                 "Designed a visually appealing and responsive interface using TailwindCSS and Daisy UI",
                 "Implemented robust error handling on both server and client sides"
             ],
-            sourceCode: "https://github.com/placeholder/chat-app",
+            sourceCode: "https://github.com/rakshakphogat/Chatapp",
             liveDemo: "#",
             category: "Full Stack",
             image: "/api/placeholder/400/250"
@@ -73,8 +73,8 @@ export const portfolioData = {
                 "Designed a responsive, component-driven UI using Next.js, TailwindCSS, and shadcn/ui",
                 "Ensuring consistency, scalability, and accessibility across pages"
             ],
-            sourceCode: "#",
-            liveDemo: "https://placeholder-noire.vercel.app",
+            sourceCode: "https://github.com/rakshakphogat/Noire-",
+            liveDemo: "https://noire-orpin.vercel.app",
             category: "E-commerce",
             image: "/api/placeholder/400/250"
         },
@@ -90,7 +90,7 @@ export const portfolioData = {
                 "Reducing client-side bundle size by 30%",
                 "Used MongoDB with Mongoose for storing blog posts and user data"
             ],
-            sourceCode: "https://github.com/placeholder/blog-app",
+            sourceCode: "https://github.com/rakshakphogat/blog-app",
             liveDemo: "#",
             category: "CMS",
             image: "/api/placeholder/400/250"
