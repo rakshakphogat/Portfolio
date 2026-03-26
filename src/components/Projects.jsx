@@ -1,13 +1,12 @@
 "use client";
 import { motion } from "framer-motion";
 import {
-  Github,
-  ExternalLink,
   Code,
-  Database,
+  ExternalLink,
+  Github,
   Globe,
-  ShoppingCart,
   MessageSquare,
+  ShoppingCart,
 } from "lucide-react";
 import { portfolioData } from "../data/portfolio";
 
@@ -42,6 +41,10 @@ const Projects = () => {
         return MessageSquare;
       case "E-commerce":
         return ShoppingCart;
+      case "AI/ML":
+        return Code;
+      case "Job Platform":
+        return Globe;
       case "CMS":
         return Globe;
       default:
@@ -55,6 +58,10 @@ const Projects = () => {
         return "from-blue-500 to-cyan-500";
       case "E-commerce":
         return "from-green-500 to-emerald-500";
+      case "AI/ML":
+        return "from-indigo-500 to-violet-500";
+      case "Job Platform":
+        return "from-orange-500 to-amber-500";
       case "CMS":
         return "from-purple-500 to-pink-500";
       default:
@@ -94,14 +101,14 @@ const Projects = () => {
                   key={project.id}
                   variants={cardVariants}
                   whileHover={{ y: -5 }}
-                  className="group"
+                  className="group h-full"
                 >
-                  <div className="bg-gray-50 dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-200 dark:border-gray-700">
+                  <div className="bg-gray-50 dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-200 dark:border-gray-700 h-full flex flex-col">
                     <div
                       className={`h-2 bg-gradient-to-r ${gradientColor}`}
                     ></div>
 
-                    <div className="p-8">
+                    <div className="p-8 flex-1 flex flex-col">
                       {/* Project Header */}
                       <div className="flex items-start justify-between mb-6">
                         <div className="flex items-center gap-4">
@@ -195,36 +202,27 @@ const Projects = () => {
                       </div>
 
                       {/* Key Features */}
-                      <div>
+                      <div className="mb-6">
                         <h4 className="text-sm font-semibold text-gray-900 dark:text-white mb-3">
                           Key Features & Achievements
                         </h4>
                         <div className="grid md:grid-cols-2 gap-3">
-                          {project.features
-                            .slice(0, 6)
-                            .map((feature, featureIndex) => (
-                              <motion.div
-                                key={featureIndex}
-                                initial={{ opacity: 0, x: -20 }}
-                                whileInView={{ opacity: 1, x: 0 }}
-                                transition={{ delay: featureIndex * 0.1 }}
-                                className="flex items-start gap-2 text-sm text-gray-600 dark:text-gray-400"
-                              >
-                                <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
-                                <span>{feature}</span>
-                              </motion.div>
-                            ))}
+                          {project.features.map((feature, featureIndex) => (
+                            <motion.div
+                              key={featureIndex}
+                              initial={{ opacity: 0, x: -20 }}
+                              whileInView={{ opacity: 1, x: 0 }}
+                              transition={{ delay: featureIndex * 0.1 }}
+                              className="flex items-start gap-2 text-sm text-gray-600 dark:text-gray-400"
+                            >
+                              <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                              <span>{feature}</span>
+                            </motion.div>
+                          ))}
                         </div>
-
-                        {project.features.length > 6 && (
-                          <motion.button
-                            whileHover={{ scale: 1.05 }}
-                            className="mt-4 text-blue-600 dark:text-blue-400 text-sm font-medium hover:underline"
-                          >
-                            View {project.features.length - 6} more features →
-                          </motion.button>
-                        )}
                       </div>
+
+                      <div className="mt-auto"></div>
                     </div>
                   </div>
                 </motion.div>

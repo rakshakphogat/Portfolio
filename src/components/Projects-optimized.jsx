@@ -1,9 +1,9 @@
 "use client";
 import { motion } from "framer-motion";
 import {
-  Github,
-  ExternalLink,
   Code,
+  ExternalLink,
+  Github,
   Globe,
   MessageSquare,
   ShoppingCart,
@@ -34,6 +34,8 @@ const Projects = () => {
     const icons = {
       "Full Stack": MessageSquare,
       "E-commerce": ShoppingCart,
+      "AI/ML": Code,
+      "Job Platform": Globe,
       CMS: Globe,
       default: Code,
     };
@@ -70,7 +72,7 @@ const Projects = () => {
                   key={project.id}
                   variants={cardVariants}
                   whileHover={{ y: -5 }}
-                  className="bg-white dark:bg-gray-800 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden"
+                  className="bg-white dark:bg-gray-800 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden h-full flex flex-col"
                 >
                   {/* Project Image */}
                   <div className="h-48 bg-gradient-to-br from-blue-100 to-purple-100 dark:from-blue-900/20 dark:to-purple-900/20 flex items-center justify-center">
@@ -78,7 +80,7 @@ const Projects = () => {
                   </div>
 
                   {/* Project Content */}
-                  <div className="p-6">
+                  <div className="p-6 flex-1 flex flex-col">
                     {/* Header */}
                     <div className="flex items-start justify-between mb-3">
                       <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
@@ -96,7 +98,7 @@ const Projects = () => {
 
                     {/* Technologies */}
                     <div className="flex flex-wrap gap-2 mb-4">
-                      {project.technologies.slice(0, 3).map((tech) => (
+                      {project.technologies.map((tech) => (
                         <span
                           key={tech}
                           className="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded text-xs"
@@ -104,11 +106,6 @@ const Projects = () => {
                           {tech}
                         </span>
                       ))}
-                      {project.technologies.length > 3 && (
-                        <span className="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded text-xs">
-                          +{project.technologies.length - 3}
-                        </span>
-                      )}
                     </div>
 
                     {/* Key Features */}
@@ -116,18 +113,18 @@ const Projects = () => {
                       <h4 className="text-sm font-medium text-gray-900 dark:text-white mb-2">
                         Key Features:
                       </h4>
-                      <ul className="text-xs text-gray-600 dark:text-gray-400 space-y-1">
-                        {project.features.slice(0, 2).map((feature, index) => (
+                      <ul className="text-xs text-gray-600 dark:text-gray-400 space-y-1.5">
+                        {project.features.map((feature, index) => (
                           <li key={index} className="flex items-start">
                             <span className="w-1 h-1 bg-blue-600 rounded-full mt-2 mr-2 flex-shrink-0"></span>
-                            <span className="line-clamp-1">{feature}</span>
+                            <span>{feature}</span>
                           </li>
                         ))}
                       </ul>
                     </div>
 
                     {/* Action Buttons */}
-                    <div className="flex gap-3">
+                    <div className="flex gap-3 mt-auto pt-2">
                       <motion.a
                         href={project.sourceCode}
                         target="_blank"
@@ -140,19 +137,17 @@ const Projects = () => {
                         <span className="text-sm">Code</span>
                       </motion.a>
 
-                      {project.liveDemo !== "#" && (
-                        <motion.a
-                          href={project.liveDemo}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          whileHover={{ scale: 1.05 }}
-                          whileTap={{ scale: 0.95 }}
-                          className="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-200"
-                        >
-                          <ExternalLink size={16} />
-                          <span className="text-sm">Live</span>
-                        </motion.a>
-                      )}
+                      <motion.a
+                        href={project.liveDemo || "#"}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        className="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-200"
+                      >
+                        <ExternalLink size={16} />
+                        <span className="text-sm">Live</span>
+                      </motion.a>
                     </div>
                   </div>
                 </motion.div>
